@@ -16,7 +16,13 @@ import android.os.Build.VERSION_CODES
 
 class MainActivity: FlutterActivity() {
     private val CHANNEL = "samples.flutter.dev/battery"
-
+    /**
+    * Configura o mecanismo FlutterEngine para suportar a comunicação entre o código Dart e o código nativo (Kotlin/Java).
+    * Um canal de comunicação é criado com o nome "samples.flutter.dev/battery".
+    * O método setMethodCallHandler é utilizado para definir um manipulador de chamadas de método, onde o código nativo
+    * responde às mensagens enviadas pelo Dart. Neste caso, o código nativo responde à chamada do método "getBatteryLevel".
+    * Se a mensagem for reconhecida, o nível da bateria é retornado com sucesso para o Dart; caso contrário, um erro é enviado de volta.
+    */
     override fun configureFlutterEngine(@NonNull flutterEngine: FlutterEngine) {
         super.configureFlutterEngine(flutterEngine)
          // Cria um canal de comunicação entre o código Dart e o código nativo (Kotlin/Java).

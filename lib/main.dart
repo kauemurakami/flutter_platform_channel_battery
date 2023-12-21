@@ -12,12 +12,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Platform Channels',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Platform Channels'),
     );
   }
 }
@@ -32,20 +32,25 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  // Cria uma instância constante de MethodChannel chamada 'platform'
+  // para estabelecer um canal de comunicação com o código nativo,
+  // usando o identificador 'samples.flutter.dev/battery'.
   static const platform = MethodChannel('samples.flutter.dev/battery');
   // Recupera o nivel de bateria.
   String _batteryLevel = 'Unknown battery level.';
-
+  // Função assíncrona para obter o nível da bateria.
   Future<void> _getBatteryLevel() async {
     String batteryLevel;
     try {
+      // Invoca o método 'getBatteryLevel' no canal 'platform' e aguarda o resultado.
       final result = await platform.invokeMethod<int>('getBatteryLevel');
+      // Atualiza a string com o nível da bateria obtido.
       batteryLevel = 'Battery level at $result % .';
     } on PlatformException catch (e) {
+      // Em caso de falha, registra a mensagem de erro.
       batteryLevel = "Failed to get battery level: '${e.message}'.";
     }
-
+    // Altera estado do text com o resultado
     setState(() {
       _batteryLevel = batteryLevel;
     });
