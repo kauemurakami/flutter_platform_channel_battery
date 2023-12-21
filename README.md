@@ -199,7 +199,7 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 ```
 ### Resultado no Android
-![Demonstração](https://github.com/kauemurakami/flutter_platform_channel_battery/assets/gifbattery.gif) 
+![Demonstração](https://github.com/kauemurakami/flutter_platform_channel_battery/main/assets/gifbattery.gif) 
 
 Partindo agora para a comunicação Flutter e Swift
 Comece encontrando o arquivo AppDelegate.swift na seguinte estrutura de pastas:  
