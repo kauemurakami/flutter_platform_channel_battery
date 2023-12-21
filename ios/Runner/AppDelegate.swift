@@ -18,13 +18,12 @@ import Flutter
         result(FlutterMethodNotImplemented)
         return
       }
-      self?.receiveBatteryLevel(result: result)
-      })
+      self.receiveBatteryLevel(result: result)
+    })
 
     GeneratedPluginRegistrant.register(with: self)
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)
   }
-
 
   private func receiveBatteryLevel(result: FlutterResult) {
     let device = UIDevice.current
