@@ -199,6 +199,7 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 ```
 ### Resultado no Android
+![Demonstração](https://github.com/kauemurakami/flutter_platform_channel_battery/assets/gifbattery.gif) 
 
 Partindo agora para a comunicação Flutter e Swift
 Comece encontrando o arquivo AppDelegate.swift na seguinte estrutura de pastas:  
@@ -304,7 +305,7 @@ import Flutter
 Este código em Swift dentro de um bloco `setMethodCallHandler` de um `FlutterMethodChannel` verifica se o método chamado pelo Flutter é `"getBatteryLevel"`. Se não for, retorna que o método não está implementado usando `FlutterMethodNotImplemented`. Se for, chama a função `receiveBatteryLevel` definida anteriormente no código, para obter e enviar de volta ao Flutter o nível da bateria do dispositivo iOS. O result é utilizado para retornar os resultados da chamada do método ao Flutter. O uso de `self` é uma precaução para evitar referências fortes e possíveis problemas de retenção de memória.
 
 ### Resultado no iOS
-
+![Demonstração](https://github.com/kauemurakami/flutter_platform_channel_battery/assets/battery-iphone.gif)  
 ### Código fonte do projeto
 
 [GitHub](https://github.com/kauemurakami/flutter_platform_channel_battery)  
