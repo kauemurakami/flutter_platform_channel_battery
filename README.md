@@ -1,3 +1,5 @@
+[![Star on GitHub](https://img.shields.io/github/stars/kauemurakami/flutter_platform_channel_battery.svg?style=flat&logo=github&colorB=deeppink&label=stars)](https://github.com/kauemurakami/flutter_platform_channel_battery) 
+
 ### Flutter `Platform Channels` em ação: comunicação eficiente entre Flutter, Kotlin e Swift para monitorar o nível de bateria em aplicações móveis".  
 
 Utilizando PlatformChannels para recuperar o nível da bateria, comunicando Flutter <> Kotlin e Flutter <> Swift.  
